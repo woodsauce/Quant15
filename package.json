@@ -1,0 +1,13 @@
+{
+  "name": "edge15-ai-oracle-v1-coinbase-oauth",
+  "version": "1.3.0",
+  "description": "Edge15 AI Oracle v1 with Coinbase OAuth spot-trader panel",
+  "private": true,
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "dependencies": {},
+  "engines": {
+    "node": "20.x"
+  }
+}
