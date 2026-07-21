@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edge15 AI Oracle Pro v2 — Adaptive Defense Engine</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="title-block">
+        <p class="eyebrow">Professional 15-minute crypto prediction engine</p>
+        <h1>Edge15 AI Oracle Pro v2</h1>
+        <p class="subtitle">6-Minute Lock + Normalized Selector + Adaptive BTC Reversal Shield + Timing Lab + Pro Score Stack.</p>
+      </div>
+      <div class="top-actions">
+        <div class="qr-card"><img id="qrImage" alt="QR code for this app" /><span>Phone link</span></div>
+        <button id="refreshNow" class="ghost-btn">Refresh now</button>
+      </div>
+    </header>
+
+    <section class="status-strip">
+      <div><span>Engine</span><strong id="engineLabel">Pro Balanced</strong></div>
+      <div><span>Defense</span><strong id="defenseLabel">Adaptive</strong></div>
+      <div><span>Feed</span><strong id="dataStatus">Idle</strong></div>
+      <div><span>Updated</span><strong id="updatedAt">--</strong></div>
+    </section>
+
+    <section class="hero-grid">
+      <article id="lockBox" class="lock-card waiting">
+        <div class="lock-head">
+          <span class="pill" id="modePill">Pro Balanced</span>
+          <span class="timer" id="roundTimer">--:--</span>
+        </div>
+        <div class="lock-main">
+          <p class="label">Current best professional call</p>
+          <h2 id="bestPick">Scanning...</h2>
+          <p id="bestReason" class="reason">Waiting for Coinbase and Kalshi feeds.</p>
+        </div>
+        <div class="score-row">
+          <div><span id="bestProScore">--</span><small>Pro score</small></div>
+          <div><span id="bestScore">--</span><small>Core score</small></div>
+          <div><span id="bestRisk">--</span><small>Risk</small></div>
+          <div><span id="bestWindow">--</span><small>Status</small></div>
+        </div>
+      </article>
+
+      <article class="record-card">
+        <div class="card-title-row"><h3>Champion / Pro record</h3><div class="card-actions"><button id="exportRecord" class="tiny-btn">Export</button><button id="resetRecord" class="tiny-btn">Reset</button></div></div>
+        <div class="record-numbers">
+          <div><strong id="wins">0</strong><span>Wins</span></div>
+          <div><strong id="losses">0</strong><span>Losses</span></div>
+          <div><strong id="skips">0</strong><span>Skips</span></div>
+          <div><strong id="accuracy">--</strong><span>Accuracy</span></div>
+        </div>
+        <div class="last10" id="last10"></div>
+        <p class="small-note">Champion core remains available. Pro modes add adaptive defense and next-clean-market selection without deleting the original logic.</p>
+      </article>
+    </section>
+
+    <section class="controls-card">
+      <div>
+        <label for="modeSelect">Engine mode</label>
+        <select id="modeSelect">
+          <option value="champion">Champion Core — original 6:00 normalized selector</option>
+          <option value="proBalanced" selected>Pro Balanced — adaptive defense</option>
+          <option value="proConservative">Pro Conservative — fewer, cleaner locks</option>
+          <option value="highConviction">High-Conviction Only</option>
+          <option value="earlyScout">Early Scout — track 8:00/7:00, trade 6:00 only</option>
+          <option value="action">Action Mode — more picks, more risk</option>
+        </select>
+      </div>
+      <div>
+        <label for="defenseSelect">Defense engine</label>
+        <select id="defenseSelect">
+          <option value="adaptive" selected>Adaptive BTC Reversal Shield</option>
+          <option value="balanced">Balanced Defense</option>
+          <option value="shadow">Shadow only — warn but do not block</option>
+          <option value="off">Off</option>
+        </select>
+      </div>
+      <div>
+        <label for="coinSelect">Markets</label>
+        <select id="coinSelect" multiple size="5">
+          <option value="BTC" selected>BTC</option>
+          <option value="ETH" selected>ETH</option>
+          <option value="SOL" selected>SOL</option>
+          <option value="BNB" selected>BNB</option>
+          <option value="XRP" selected>XRP</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="pro-grid">
+      <article class="panel">
+        <div class="panel-head"><h3>Pro score stack</h3><span id="proGrade" class="grade">--</span></div>
+        <div id="scoreStack" class="score-stack"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head"><h3>Adaptive BTC Reversal Shield</h3><span id="shieldPill" class="pill">--</span></div>
+        <div id="shieldDetails" class="shield-details"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head"><h3>Post-lock monitor</h3><span id="holdQuality" class="grade">--</span></div>
+        <div id="postLockMonitor" class="monitor"></div>
+      </article>
+    </section>
+
+    <section>
+      <div class="section-head"><h3>Live ranked markets</h3><p>Pro v2 ranks by final Pro Score: core edge + selector + confirmation + timing quality − reversal and flip risk.</p></div>
+      <div id="marketGrid" class="market-grid"></div>
+    </section>
+
+    <section class="lab-grid">
+      <article class="panel wide">
+        <div class="panel-head"><h3>Timing Lab</h3><span class="small-note">8:00 and 7:00 are shadow/early-confirmation layers until proven.</span></div>
+        <div id="timingLab" class="timing-lab"></div>
+      </article>
+      <article class="panel">
+        <div class="panel-head"><h3>Next clean market selector</h3><span id="cleanMarketPill" class="pill">--</span></div>
+        <div id="cleanMarketNotes" class="clean-notes"></div>
+      </article>
+    </section>
+
+    <section class="brain-grid">
+      <article class="brain-card"><h3>AI council</h3><div id="councilList" class="council-list"></div></article>
+      <article class="brain-card"><h3>Learning memory</h3><div id="memorySummary" class="memory-summary"></div></article>
+      <article class="brain-card"><h3>Pending locks</h3><div id="pendingList" class="pending-list"></div></article>
+    </section>
+
+    <section class="execution-grid">
+      <article class="panel"><h3>Execution readiness</h3><div class="exec-list"><div><strong>Coinbase spot</strong><span>Signal/paper-ready. Keep live OFF until key test passes.</span></div><div><strong>Kalshi contracts</strong><span>Prediction-market execution remains separate from Coinbase spot.</span></div><div><strong>Money/value</strong><span>Displayed as advisory; not allowed to override the prediction engine unless enabled later.</span></div></div></article>
+      <article class="panel"><h3>Replay/export lab</h3><p class="small-note">Exports now include Pro Score layers, reversal shield readings, timing-lab status, and next-clean-market notes so future uploads can be analyzed deeper than win/loss setup keys.</p></article>
+    </section>
+
+    <footer><p>This is a decision-support and research tool, not financial advice. Crypto and prediction markets are risky, APIs can lag, and settlement can differ from visible spot ticks. Use paper/signal mode before any live execution.</p></footer>
+  </div>
+  <script src="./app.js"></script>
+</body>
+</html>

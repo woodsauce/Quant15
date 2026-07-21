@@ -1,0 +1,11 @@
+{
+  "framework": null,
+  "buildCommand": "npm run build",
+  "outputDirectory": ".",
+  "cleanUrls": true,
+  "functions": {
+    "api/*.js": {
+      "maxDuration": 10
+    }
+  }
+}
